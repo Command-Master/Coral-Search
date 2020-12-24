@@ -6,7 +6,7 @@ const ll mask = (1ll << 48) - 1;
 
 #define advance1(s) s = (s * m + 11ll) & mask
 #define advance2(s)  \
-    s = advance1(s); \
+    advance1(s); \
     advance1(s);
 #define getIntBounded(x, s, n)              \
     if ((n & (-n)) == n)                    \
