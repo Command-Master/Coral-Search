@@ -331,9 +331,11 @@ void find() {
 }
 
 int main(void) {
+    printf("Begin\n");
     int blockSize = 256;
     ll N = 1ll << 48;
     int numBlocks = (N + blockSize - 1) / blockSize;
     find<<<numBlocks, blockSize>>>();
     cudaDeviceSynchronize();
+    printf("End\n");
 }
