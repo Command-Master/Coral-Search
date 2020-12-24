@@ -325,7 +325,7 @@ void find() {
     ll i = 0;
     int index = blockIdx.x * blockDim.x + threadIdx.x;
     int stride = blockDim.x * gridDim.x;
-    for (i = index; i < (1ll << 48); i += stride) {
+    for (i = index; i < (1ll << 36); i += stride) {
         check_seed(i);
     }
 }
@@ -333,8 +333,9 @@ void find() {
 int main(void) {
     printf("Begin\n");
     int blockSize = 256;
-    ll N = 1ll << 48;
-    int numBlocks = (N + blockSize - 1) / blockSize;
+    // ll N = 1ll << ;
+    // int numBlocks = (N + blockSize - 1) / blockSize;
+    int numBlocks = 32768;
     find<<<numBlocks, blockSize>>>();
     cudaDeviceSynchronize();
     printf("End\n");
