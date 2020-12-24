@@ -31,9 +31,10 @@ const ll mask = (1ll << 48) - 1;
     y = x;         \
     x -= y;
 
-int check_seed(int seed)
+int check_seed(ll seed)
 {
     ll color, stem_height;
+    ll bits, val;
     float temp;
     ll tempi;
     getIntBounded(color, seed, 5);
